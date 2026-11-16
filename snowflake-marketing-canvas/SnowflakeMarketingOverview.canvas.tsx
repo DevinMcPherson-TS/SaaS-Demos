@@ -201,6 +201,126 @@ const schemaTables = [
   { name: "RAW_API_PAYLOADS", rows: 2, role: "Raw" },
 ];
 
+function BumbleBeeLogo() {
+  return (
+    <svg
+      aria-labelledby="logo-title logo-description"
+      role="img"
+      viewBox="0 0 1000 800"
+      width={120}
+      height={96}
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      <title id="logo-title">Bumble Bee Yoga logo</title>
+      <desc id="logo-description">
+        A friendly white robot bee with golden stripes and wings above the
+        words Bumble Bee Yoga
+      </desc>
+      <g stroke="#24231F" strokeLinecap="round" strokeLinejoin="round">
+        <path
+          d="M409 323 C318 213 225 224 211 297 C199 360 281 402 405 368Z"
+          fill="#F6C745"
+          fillOpacity={0.22}
+          strokeWidth={12}
+        />
+        <path
+          d="M591 323 C682 213 775 224 789 297 C801 360 719 402 595 368Z"
+          fill="#F6C745"
+          fillOpacity={0.22}
+          strokeWidth={12}
+        />
+        <path
+          d="M376 246 C367 112 633 112 624 246"
+          fill="none"
+          stroke="#24231F"
+          strokeWidth={20}
+        />
+        <path
+          d="M500 172 C431 172 383 217 383 286 L383 362 C383 449 428 507 500 507 C572 507 617 449 617 362 L617 286 C617 217 569 172 500 172Z"
+          fill="#FFFEFA"
+          strokeWidth={14}
+        />
+        <path
+          d="M407 281 C418 227 451 204 500 204 C549 204 582 227 593 281 C564 303 533 313 500 313 C467 313 436 303 407 281Z"
+          fill="#24231F"
+          stroke="none"
+        />
+        <path
+          d="M442 246 Q463 250 484 270 Q461 266 442 258Z"
+          fill="#F6C745"
+          stroke="none"
+        />
+        <path
+          d="M558 246 Q537 250 516 270 Q539 266 558 258Z"
+          fill="#F6C745"
+          stroke="none"
+        />
+        <rect
+          x={333}
+          y={222}
+          width={44}
+          height={72}
+          rx={19}
+          fill="#F6C745"
+          strokeWidth={12}
+        />
+        <rect
+          x={623}
+          y={222}
+          width={44}
+          height={72}
+          rx={19}
+          fill="#F6C745"
+          strokeWidth={12}
+        />
+        <path d="M349 240 V276" fill="none" strokeWidth={7} />
+        <path d="M651 240 V276" fill="none" strokeWidth={7} />
+        <path
+          d="M391 363 C427 382 463 391 500 391 C537 391 573 382 609 363"
+          fill="none"
+          stroke="#F6C745"
+          strokeWidth={28}
+        />
+        <path
+          d="M403 425 C436 441 468 449 500 449 C532 449 564 441 597 425"
+          fill="none"
+          stroke="#F6C745"
+          strokeWidth={28}
+        />
+        <path d="M420 192 C400 159 378 146 353 151" fill="none" strokeWidth={11} />
+        <circle cx={347} cy={151} r={9} fill="#F6C745" strokeWidth={8} />
+        <path d="M580 192 C600 159 622 146 647 151" fill="none" strokeWidth={11} />
+        <circle cx={653} cy={151} r={9} fill="#F6C745" strokeWidth={8} />
+      </g>
+      <text
+        x={500}
+        y={625}
+        fill="#24231F"
+        fontFamily="Avenir Next, Montserrat, Arial, sans-serif"
+        fontSize={74}
+        fontWeight={700}
+        letterSpacing={7}
+        textAnchor="middle"
+      >
+        BUMBLE BEE
+      </text>
+      <text
+        x={500}
+        y={690}
+        fill="#B27B13"
+        fontFamily="Avenir Next, Montserrat, Arial, sans-serif"
+        fontSize={37}
+        fontWeight={600}
+        letterSpacing={18}
+        textAnchor="middle"
+      >
+        Music and Flow
+      </text>
+    </svg>
+  );
+}
+
 function money(n: number): string {
   return n.toLocaleString("en-US", {
     style: "currency",
@@ -227,24 +347,27 @@ export default function SnowflakeMarketingOverview() {
 
   return (
     <Stack gap={24} style={{ padding: 24, maxWidth: 1100 }}>
-      <Stack gap={8}>
-        <Row gap={8} align="center" wrap>
-          <H1 style={{ margin: 0 }}>Marketing performance</H1>
-          <Pill tone="info" active>
-            Snowflake
-          </Pill>
-          <Pill tone="success" active>
-            All campaigns active
-          </Pill>
-        </Row>
-        <Text tone="secondary" size="small">
-          {SOURCE}
-        </Text>
-        <Text>
-          Paid media, web sessions, email, and attributed conversions from the
-          Fivetran marketing star schema.
-        </Text>
-      </Stack>
+      <Row gap={16} align="center" wrap>
+        <BumbleBeeLogo />
+        <Stack gap={8} style={{ flex: 1, minWidth: 240 }}>
+          <Row gap={8} align="center" wrap>
+            <H1 style={{ margin: 0 }}>Marketing performance</H1>
+            <Pill tone="info" active>
+              Snowflake
+            </Pill>
+            <Pill tone="success" active>
+              All campaigns active
+            </Pill>
+          </Row>
+          <Text tone="secondary" size="small">
+            {SOURCE}
+          </Text>
+          <Text>
+            Paid media, web sessions, email, and attributed conversions from the
+            Fivetran marketing star schema.
+          </Text>
+        </Stack>
+      </Row>
 
       <Callout tone="info" title="Schema focus">
         Primary grain is FACT_AD_PERFORMANCE_DAILY (630 rows) joined to

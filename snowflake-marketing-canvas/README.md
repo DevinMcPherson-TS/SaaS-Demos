@@ -6,6 +6,12 @@ A Cursor Canvas dashboard of `FIVETRAN_DATABASE.MARKETING` data from Snowflake.
 
 Queried Snowflake with the Snowflake MCP (`sql-exec-tool`), then rendered the dashboard with `WriteCanvas`.
 
+## Branding
+
+The upper-left header uses the **Bumble Bee Yoga** logo from Figma Make: https://www.figma.com/make/0m8SJ07ZGr5FiwJWiGh9J9/Yoga-Business-Logo
+
+A reusable standalone SVG (no cream background) lives at `bumble-bee-logo.svg`.
+
 ## How to use
 
 Open or recreate the canvas in Cursor via `WriteCanvas`, or paste `SnowflakeMarketingOverview.canvas.tsx` into a canvas. The embedded metrics are a **September 2026 snapshot**, not a live query.
